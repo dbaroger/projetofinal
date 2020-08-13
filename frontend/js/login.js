@@ -25,16 +25,13 @@ function logar(){
         }
     }
 
-    teste = JSON.stringify(cabecalho);
-    window.alert(teste);
 
     if (document.getElementById("txtUser").value.indexOf("@")==-1){    
             fetch("http://localhost:8080/loginbyracf", cabecalho)
             .then(res => res.json())
             .then(res => {
-                            //localStorage.setItem("logado", JSON.stringify(res));
-                            //window.location="usuario.html";
-                            window.alert("Logado!");
+                            localStorage.setItem("logado", JSON.stringify(res));
+                            window.location="relatorio.html";
                         })
             .catch(err => {
                             window.alert("Erro");
@@ -45,7 +42,8 @@ function logar(){
         .then(res => {
                         //localStorage.setItem("logado", JSON.stringify(res));
                         //window.location="usuario.html";
-                        window.alert("Logado!");
+                        localStorage.setItem("logado", JSON.stringify(res));
+                        window.location="relatorio.html";
                     })
         .catch(err => {
                         window.alert("Erro");

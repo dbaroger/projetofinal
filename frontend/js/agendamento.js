@@ -1,11 +1,13 @@
 function cadastrar(){
 
+
     var data = document.getElementById("txtData").value;
     var ano = data.substring(0,4);
     var mes = data.substring(5,7);
     var dia = data.substring(8);
     var dataFormatada = dia + "/" + mes + "/" + ano;
-  
+    
+    
    var mensagem = {
        nomeCli : document.getElementById("txtNome").value,
        email : document.getElementById("txtEmail").value,
@@ -17,7 +19,7 @@ function cadastrar(){
                     id : document.getElementById("txtAgencia").value
                 }
    }
-window.alert(JSON.stringify(mensagem));
+        //window.alert(JSON.stringify(mensagem));
    var cabecalho = {
        method:"POST",
        body:JSON.stringify(mensagem),
