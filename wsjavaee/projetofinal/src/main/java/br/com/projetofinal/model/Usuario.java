@@ -18,6 +18,12 @@ public class Usuario {
 		
 		@Column(name="senha", length=20)
 		private String senha;
+		
+		@Column(name="nome", length=100)
+		private String nome;
+		
+		@Column(name="foto", length=100)
+		private String foto;
 
 		public String getRacf() {
 			return racf;
@@ -43,11 +49,29 @@ public class Usuario {
 			this.senha = senha;
 		}
 
-		public Usuario(String racf, String email, String senha) {
+		public Usuario(String racf, String email, String senha, String nome, String foto) {
 			super();
 			this.racf = racf;
 			this.email = email;
 			this.senha = senha;
+			this.nome = nome;
+			this.foto = foto;
+		}
+
+		public String getNome() {
+			return nome;
+		}
+
+		public void setNome(String nome) {
+			this.nome = nome;
+		}
+
+		public String getFoto() {
+			return foto;
+		}
+
+		public void setFoto(String foto) {
+			this.foto = foto;
 		}
 
 		public Usuario() {

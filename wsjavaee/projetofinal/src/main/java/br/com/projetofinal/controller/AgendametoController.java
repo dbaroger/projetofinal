@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -25,6 +26,8 @@ public class AgendametoController {
 		try {
 			adao.save(agendamento);
 			return ResponseEntity.ok(agendamento);
+		}catch(DataIntegrityViolationException e) {
+			return ResponseEntity.status(450).build();
 		}catch(Exception e){
 			return ResponseEntity.status(403).build();
 		}
@@ -95,6 +98,16 @@ public class AgendametoController {
 	public ResponseEntity<List<Agendamento>> agendamentoAgenciaDataCliente(@RequestBody Agendamento agendamento){
 		ArrayList<Agendamento> lista =
 				(ArrayList<Agendamento>) adao.findByAgenciaIdAndDataAgendamentoAndNomeCli(agendamento.getAgencia().getId(), agendamento.getDataAgendamento(), agendamento.getNomeCli());
+				if(lista.size()==0) {
+					return ResponseEntity.status(403).build();
+				}
+				return ResponseEntity.ok(lista);
+	}	 
+	
+	@PostMapping("/relatoriogeral")
+	public ResponseEntity<List<Agendamento>> agendamentoGeral(){
+		ArrayList<Agendamento> lista =
+				(ArrayList<Agendamento>) adao.findAll();
 				if(lista.size()==0) {
 					return ResponseEntity.status(403).build();
 				}

@@ -1,5 +1,6 @@
 package br.com.projetofinal.model;
 
+import java.time.ZoneId;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -38,7 +39,7 @@ public class Agendamento {
 	@JsonFormat(shape=JsonFormat.Shape.STRING, pattern="dd/MM/yyyy")
 	private Date dataAgendamento;
 	
-	@Column(name="hora_agendamento", length=5)
+	@Column(name="hora_agendamento", length=15)
 	private String horaAgendamento;
 	
 	@Column(name="observacao", length=255)

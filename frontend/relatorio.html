@@ -7,18 +7,30 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
         <link rel="stylesheet" href="css/style.css">
         <script type="text/javascript" src="js/relatorio.js"></script>
+        <script type="text/javascript" class="init">
+	
+            $(document).ready(function() {
+                var table = $('#agendamentos2').DataTable( {
+                    lengthChange: false,
+                    buttons: [ 'copy', 'excel', 'pdf', 'colvis' ]
+                } );
+            
+                table.buttons().container()
+                    .appendTo( '#example_wrapper .col-md-6:eq(0)' );
+            } );
+                </script>
     </head>
-<body onload="carregarUsuario()">
+<body onload="carregarPagina()">
     <div class="container">
         <div class="row">
             <div id="foto" class="col-4">
-                <img src="";></img>
+            
             </div>
             <div id="nome" class="col-4">
-                <h3 style="text-align: center;"></h3>
+                <h3 style="text-align: center;"></h3><br>
             </div>
             <div class="col-4">
-                <button onclick="window.location.href='login.html'" type="button" class="btn btn-primary">Logout</button>
+                <button style="float: right;" onclick="window.location.href='login.html'" type="button" class="btn btn-primary">Logout</button>
             </div>  
         </div>
         <br>
@@ -27,16 +39,18 @@
                 <h3 align="left">SELECIONE SEU RELATORIO</h3> 
             </div>           
         </div>
-        <div class="row">
-            <div class="col-12">
-                <div class="input-group flex-nowrap">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text" id="addon-wrapping">AGENCIA</span>
-                    </div>
-                    <input id="txtAgencia" type="text" class="form-control" placeholder="Agencia" aria-label="Agencia" aria-describedby="addon-wrapping">
-                  </div>
-            </div>           
+
+
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <label class="input-group-text" for="inputGroupSelect01">AGENCIA</label>
+            </div>
+            <select id="txtAgencia" name="Agencia" class="custom-select">
+
+            </select>
         </div>
+
+   
         <div class="row">
             <div class="col-12">
                 <div class="input-group flex-nowrap">
@@ -53,7 +67,7 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text" id="addon-wrapping">CLIENTE</span>
                     </div>
-                    <input id="txtCliente" type="text" class="form-control" placeholder="Cliente" aria-label="Cliente" aria-describedby="addon-wrapping">
+                    <input id="txtCliente" type="text" class="form-control" placeholder="" aria-label="" aria-describedby="addon-wrapping">
                   </div>
             </div>           
         </div>
@@ -67,6 +81,11 @@
         <h3 align="center">Agendamentos Cadastrados</h3>
         <br>
         <h5 id="agendamento"></h5>
+        
+        
+        <table id="agendamento2" class="table table-striped table-bordered" style="width:100%">
+           
+
         <br>
         <br>
     </div>

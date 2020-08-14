@@ -34,7 +34,7 @@ function logar(){
                             window.location="relatorio.html";
                         })
             .catch(err => {
-                            window.alert("Erro");
+                            window.alert("Erro de Autenticação. Tente novamente.");
                         });
     } else {
         fetch("http://localhost:8080/loginbyemail", cabecalho)
@@ -46,7 +46,7 @@ function logar(){
                         window.location="relatorio.html";
                     })
         .catch(err => {
-                        window.alert("Erro");
+                        window.alert("Erro de Autenticação. Tente novamente.");
                     });
     }
 }

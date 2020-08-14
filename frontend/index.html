@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="css/style.css">
     <script type="text/javascript" src="js/agendamento.js"></script>
 </head>
-<body>
+<br><br>
+<body onload="carregarPagina()">
     <div class="container">
         <div class="row">
             <div class="col-12">
@@ -22,7 +23,7 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text" id="addon-wrapping">NOME</span>
                     </div>
-                    <input id="txtNome" type="nome" class="form-control" placeholder="Nome" aria-label="Nome" aria-describedby="addon-wrapping">
+                    <input id="txtNome" type="nome" class="form-control" placeholder="" aria-label="" aria-describedby="addon-wrapping">
                   </div>
             </div>           
         </div>
@@ -32,7 +33,7 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text" id="addon-wrapping">EMAIL</span>
                     </div>
-                    <input id="txtEmail" type="email" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="addon-wrapping">
+                    <input id="txtEmail" type="email" class="form-control" placeholder="" aria-label="" aria-describedby="addon-wrapping">
                   </div>
             </div>           
         </div>
@@ -42,72 +43,63 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text" id="addon-wrapping">CELULAR / WHATSAPP</span>
                     </div>
-                    <input id="txtCelular" type="text" class="form-control" placeholder="Celular" aria-label="Celular" aria-describedby="addon-wrapping">
+                    <input id="txtCelular" type="text" class="form-control" placeholder="" aria-label="" aria-describedby="addon-wrapping">
                   </div>
             </div>           
         </div>
+
         <div class="row">
             <div class="col-12">
                 <div class="input-group flex-nowrap">
                     <div class="input-group-prepend">
                       <span class="input-group-text" id="addon-wrapping">DATA</span>
                     </div>
-                    <input id="txtData" type="date" class="form-control" placeholder="Data" aria-label="Data" aria-describedby="addon-wrapping">
+                    <input disabled id="txtData" type="text" class="form-control" placeholder="" aria-label="" aria-describedby="addon-wrapping">
                   </div>
             </div>           
         </div>
-        <div class="row">
-            <div class="col-12">
-                <div class="input-group flex-nowrap">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text" id="addon-wrapping">AGENCIA</span>
-                    </div>
-                    <input id="txtAgencia" type="text" class="form-control" placeholder="Agencia" aria-label="Agencia" aria-describedby="addon-wrapping">
-                  </div>
-            </div>           
+
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <label class="input-group-text" for="inputGroupSelect01">AGENCIA</label>
+            </div>
+            <select id="txtAgencia" name="Agencia" class="custom-select">
+
+            </select>
         </div>
-        <div class="row">
-            <div class="col-12">
-                <div class="input-group flex-nowrap">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text" id="addon-wrapping">HORA INICIO</span>
-                    </div>
-                    <input id="txtHoraIni" type="text" class="form-control" placeholder="Hora Inicio" aria-label="Hora Inicio" aria-describedby="addon-wrapping">
-                  </div>
-            </div>           
-        </div>
-        <div class="row">
-            <div class="col-12">
-                <div class="input-group flex-nowrap">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text" id="addon-wrapping">HORA FIM</span>
-                    </div>
-                    <input id="txtHoraFim" type="text" class="form-control" placeholder="Hora Fim" aria-label="Hora Fim" aria-describedby="addon-wrapping">
-                  </div>
-            </div>           
-        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <label class="input-group-text" for="inputGroupSelect01">HORÁRIO</label>
+            </div>
+            <select id="txtHorario" name="horario" class="custom-select" id="inputGroupSelect01">
+              <option selected></option>
+              <option selected>10:00 - 10:30</option>
+              <option selected>10:30 - 11:00</option>
+              <option selected>11:00 - 11:30</option>
+              <option selected>11:30 - 12:00</option>
+              <option selected>12:00 - 12:30</option>
+              <option selected>12:30 - 13:00</option>
+              <option selected>13:00 - 13:30</option>
+              <option selected>13:30 - 14:00</option>
+            </select>
+          </div>
         <div class="row">
             <div class="col-12">
                 <div class="input-group flex-nowrap">
                     <div class="input-group-prepend">
                       <span class="input-group-text" id="addon-wrapping">OBSERVACAO</span>
                     </div>
-                    <input id="txtObs" type="text" class="form-control" placeholder="Observacao" aria-label="Observacao" aria-describedby="addon-wrapping">
+                    <input id="txtObs" type="text" class="form-control" placeholder="" aria-label="" aria-describedby="addon-wrapping">
                   </div>
             </div>           
         </div>
         <div class="row">
             <div class="col-12">
                 <button onclick="cadastrar()" type="button" class="btn btn-primary">Cadastrar</button>
+                <button type="reset" class="btn btn-primary">Limpar</button>
             </div>           
         </div>
 
-        <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Agenvia<span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                    <li><a href="receiving.html">Receiving</a></li>
-                </ul>
-            </li>
 
 
     </div>
